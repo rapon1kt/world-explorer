@@ -13,8 +13,14 @@ export interface Country {
     url_png: string;
     description: string;
   };
-  capital: string;
+  capitals: Array<{
+    name: string;
+  }>;
+  borders: Array<string>;
+  tlds: Array<string>;
   region: string;
+  subregion: string;
+  languages: Array<{ name: string }>;
   descriptions: {
     long: string;
     short: string;

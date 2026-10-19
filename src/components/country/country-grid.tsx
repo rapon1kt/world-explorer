@@ -1,5 +1,5 @@
-import { Country } from "@/domain/models/country";
 import { CountryCard } from "./country-card";
+import { Country } from "@/domain/models/country";
 
 interface CountriesGridProps {
   countries: Country[];

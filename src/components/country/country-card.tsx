@@ -1,20 +1,13 @@
-import { Country } from "@/domain/models/country";
-import Image from "next/image";
 import Link from "next/link";
-
-function formatPopulationText(population: number) {
-  const numberFormat = new Intl.NumberFormat("en-US", {
-    notation: "compact",
-    maximumFractionDigits: 2,
-  });
-  return numberFormat.format(population);
-}
+import Image from "next/image";
+import { formatPopulationText } from "@/utils";
+import { Country } from "@/domain/models/country";
 
 export function CountryCard({ country }: { country: Country }) {
   return (
     <div className="flex justify-center">
       <Link
-        href={`/${country.names.common.toLocaleLowerCase()}`}
+        href={`/country/${country.names.common.toLocaleLowerCase()}`}
         className="w-full h-80 bg-slate-700 shadow-sm shadow-slate-900"
       >
         {country.flag.url_png ? (

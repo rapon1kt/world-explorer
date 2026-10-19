@@ -1,7 +1,7 @@
 import { Globe } from "lucide-react";
 import { HomeShell } from "@/components";
 import { countryService } from "@/services";
-import { Footer } from "@/components/footer";
+import { Footer } from "@/components";
 
 export default async function Home() {
   const countries = await countryService.getCountries();

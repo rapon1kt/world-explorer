@@ -23,4 +23,12 @@ export const countryService = {
 
     return countries;
   },
+  async getCountry(name: string): Promise<Country> {
+    const response = await fetch(`${env.api_url}/names.common/${name}`, {
+      headers: {
+        Authorization: `Bearer ${env.api_key}`,
+      },
+    });
+    return (await response.json()).data.objects[0];
+  },
 };

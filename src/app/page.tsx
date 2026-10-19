@@ -1,7 +1,7 @@
-import Link from "next/link";
 import { Globe } from "lucide-react";
-import { countryService } from "@/services";
 import { HomeShell } from "@/components";
+import { countryService } from "@/services";
+import { Footer } from "@/components/footer";
 
 export default async function Home() {
   const countries = await countryService.getCountries();
@@ -17,18 +17,8 @@ export default async function Home() {
           Search for any country in the world and get some information about it!
         </p>
       </div>
-
       <HomeShell countries={countries} />
-
-      <footer className="w-full text-center py-8 text-slate-400">
-        Made by{" "}
-        <Link
-          href="https://github.com/rapon1kt"
-          className="underline text-indigo-400"
-        >
-          raponikt
-        </Link>
-      </footer>
+      <Footer />
     </div>
   );
 }
